@@ -6,9 +6,9 @@ import ProductCard from './ProductCard';
 function Products(){
     const products=useProducts();
     return(
-        <Row>
+      <Row>
             {
-                products.products.map(p=><ProductCard key={p.id} {...p} />)
+                products.map(p=><ProductCard key={p.id} {...p} />)
             }
       </Row>
     )

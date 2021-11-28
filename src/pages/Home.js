@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {useProductsActions} from './../hooks/useProducts'
 import Products from "../components/products/Products";
+import NavBar from "../components/layouts/NavBar";
 
 function Home(){
     const {getProducts}=useProductsActions();
@@ -9,9 +10,11 @@ function Home(){
     })
     return(
 
-        <div className='container'>
-
-           <Products />
+        <div >
+           <NavBar />
+           <div className='container'>
+              <Products />
+           </div>
         </div>
       
     )

@@ -1,6 +1,6 @@
 import Home from './pages/Home';
 import About from './pages/About'
-import SingleProduct from './components/products/SingleProduct';
+import Product from './pages/Product';
 import NotFound from './pages/NotFound'
 
 const routes=[
@@ -10,7 +10,7 @@ const routes=[
     },
     {
       path : "/products/:id",
-      element: <SingleProduct />
+      element: <Product />
     },
     {
       path :"/about",

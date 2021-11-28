@@ -15,13 +15,7 @@ function useProductsActions(){
 
     const getProducts =() =>{
         getProductsApi().then(res=>{
-            // console.log(res);
-            setProducts((prevProducts)=>{
-                return{
-                    ...prevProducts,
-                    products:res.data
-                }
-            })
+            setProducts(res.data)
         });
     }
     return {getProducts};

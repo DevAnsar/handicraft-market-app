@@ -1,45 +1,26 @@
-import React, { useEffect,useState } from "react";
-import {Link,useParams,useNavigate} from 'react-router-dom';
-import {getProductApi} from './../../apis/products'
+import React from "react";
+import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
-function SingleProduct(){
-
-  let params=useParams();
+function SingleProduct({product}){
   let navigate = useNavigate();
-  const [product,setProduct]=useState({title:"",body:""});
-
-
-  
-  useEffect(()=>{
-    
-
-    const getProduct = () =>{
-      const id = params.id;
-      getProductApi(id).then(res=>{
-        setProduct(res.data)
-      });
-    }
-    getProduct();
-  },[params.id]);
 
     return(
-
         <div className="row">
-        <div className="col s12 m7">
+        <div className="col s12 m12 mt-3">
           <div className="card">
-            <div className="card-image">
-          
-              <span className="card-title">{product.title}</span>
-            </div>
+  
             <div className="card-content">
+            <span className="card-title">{product.title}</span>
               <p>{product.body}</p>
             </div>
             <div className="card-action">
              <Link to={`/products/#`}> </Link>
+             <div onClick={()=>{navigate(-1)}}>Go Back!</div>
             </div>
           </div>
         </div>
-        <div onClick={()=>{navigate(-1)}}>Go Back!</div>
+        
       </div>
      
     )
