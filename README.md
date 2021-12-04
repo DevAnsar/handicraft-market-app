@@ -1,1 +1,1 @@
-#
+#A web application for displaying and selling crafts and similar works
