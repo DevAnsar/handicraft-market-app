@@ -4,12 +4,12 @@ function ProductCard({id,title,body}){
     return(
         
         <div className="col s12 m4 l4">
-          <div className="card">
-            <div className="card-content" style={{height:'200px'}}>
-            <span className="card-title">{title}</span>
-              <p>{body}</p>
+          <div className="card box">
+            <div className="card-content " style={{height:'200px',overflow:'hidden'}}>
+            <span className="card-title text-color">{title}</span>
+              <p className='text-color'>{body}</p>
             </div>
-            <div className="card-action">
+            <div className="card-action ">
               <Link to={`/products/${id}`}>
                 Go To Product
               </Link>
