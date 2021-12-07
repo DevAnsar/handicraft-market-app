@@ -6,7 +6,8 @@ import {Helmet} from 'react-helmet'
 import ProductsProvider from './providers/ProductsProvider';
 import ThemeProvider ,{ThemeContext} from './providers/ThemeProvider';
 import Styles from "./data/Styles";
-
+import NavBar from "./components/layouts/NavBar";
+import Footer from "./components/layouts/Footer";
 
 const StyleTag = () => {
   const themeMode = useContext(ThemeContext);
@@ -21,12 +22,14 @@ function App() {
   return (
     <ThemeProvider>
       <StyleTag />
-      <div className="App">
+      <div className="App" id="App">
+        <NavBar />
         <ProductsProvider>
           <Routes>
-            {routes.map(route=><Route key={route.path} path={route.path} element={route.element} />)}
+            {routes.map(({path,element})=><Route key={path} path={path} element={element} />)}
           </Routes>
         </ProductsProvider>
+        <Footer />
       </div>
     </ThemeProvider>
   );

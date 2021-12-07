@@ -6,6 +6,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap-grid.rtl.min.css';
+import 'bootstrap/dist/css/bootstrap-utilities.rtl.css';
+import 'bootstrap/dist/css/bootstrap-reboot.rtl.min.css';
+
+import 'vazir-font/dist/font-face.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

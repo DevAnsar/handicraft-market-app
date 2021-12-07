@@ -1,0 +1,56 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    /* direction: rtl; */
+}
+.header{
+    margin-top: 35px;
+}
+.showbiz-description{
+    font-size: 1.25rem;
+    line-height: 180%;
+    text-align: justify;
+}
+
+
+.slider-title{
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: inline-block;
+    
+}
+
+.slider-box .slider-title::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background-color: aqua;
+
+    transition: width 1s ease;
+
+}
+
+.slider-box:hover .slider-title::after{ 
+     width: 100%;
+    transition: width 900ms ease;
+ } 
+
+ .column-center{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+ }
+ 
+ .row-center{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+ }
+ .start{justify-content: flex-start !important};

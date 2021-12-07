@@ -3,20 +3,20 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 function NabBar(){
     return (
+        <div class="navbar-fixed">
         <nav>
-            <div className="nav-wrapper">
-            <Link to="/" className="brand-logo right">
-             <i className="large material-icons">drag_handle</i>
-            </Link>
-            <ul id="nav-mobile" className="left hide-on-med-and-down">
-                <li><ThemeSwitcher /></li>
-                <li><Link to="/">home</Link></li>
-                <li><Link to="/about">about us</Link></li>
-                {/* <li><a href="http://ansarmirzayi.ir">creator</a></li> */}
-                
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            <ul class="left hide-on-med-and-down">
+              <li className="row-center text-color">
+                  <ThemeSwitcher />
+                  حالت تاریک
+              </li>
+              <li><a href="badges.html">Components</a></li>
             </ul>
-            </div>
+          </div>
         </nav>
+      </div>
 
     )
 }
