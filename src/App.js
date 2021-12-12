@@ -11,6 +11,7 @@ import Footer from "./components/layouts/Footer";
 
 const StyleTag = () => {
   const themeMode = useContext(ThemeContext);
+  {console.log(themeMode)}
   return (
     <Helmet>
       <style>{Styles(themeMode)}</style>

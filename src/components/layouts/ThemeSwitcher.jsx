@@ -9,8 +9,8 @@ const ThemeSwitcher = () => {
   const themeModeState = useContext(ThemeSetContext);
 
   const handleThemeChange = (e) => {
-    
-    themeModeState(themeMode===THEME_TYPE.LIGHT?"dark":"light");
+    // light & dark & wooden
+    themeModeState(themeMode===THEME_TYPE.WOODEN?"dark":"wooden");
   };
 
   return (

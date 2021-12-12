@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap-utilities.rtl.css';
 import 'bootstrap/dist/css/bootstrap-reboot.rtl.min.css';
 
 import 'vazir-font/dist/font-face.css';
+import 'materialize-css/dist/js/materialize.min.js';
 
 ReactDOM.render(
   <React.StrictMode>

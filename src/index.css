@@ -13,3 +13,9 @@ code {
 
   cursor: pointer;
 }
+a{
+  text-decoration: none !important;
+}
+.switch .lever{
+  margin-right: 0 !important;
+}

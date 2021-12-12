@@ -1,4 +1,5 @@
 export const THEME_TYPE ={
     LIGHT:"light",
-    DARK : "dark"
+    DARK : "dark",
+    WOODEN:"wooden"
 };
