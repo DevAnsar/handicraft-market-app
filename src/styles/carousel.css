@@ -1,0 +1,95 @@
+:root{
+    --carousel-radius : 20px;
+    --item-hieght : 300px;
+    --item-image-hieght:200px;
+    --item-text-content-hieght:100px
+}
+.slider-box{
+    width: 100%;
+border-radius: 15px;
+padding: 25px;
+margin-top:55px;
+}
+
+.divider{
+    height: 2px;
+    background-color: aliceblue;
+    width: 100%;
+    margin-top: 10px;
+}
+.slider-items{
+    margin-bottom: 0;
+}
+
+.slider-item{
+    border-radius: var(--carousel-radius);
+    overflow: hidden;
+}
+
+.slider-item-parent:hover{
+    transform: scale(1.012);
+}
+
+.slider-item-parent{
+
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.carousel-container{
+    direction: ltr;
+}
+.carousel-card{
+    margin: 10px 15px;
+    
+}
+.carousel-card-content{
+    height:var(--item-hieght);
+    overflow:hidden;
+
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-text-content{
+    height:calc( var(--item-text-content-hieght));
+    padding: 20px 0 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.carousel-text-content > .title{
+    width: 100%;
+    padding: 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+}
+
+.carousel-text-content > .cost{
+    width: 100%;
+    height: 45px;
+    border-top: 2px dashed #ccc;
+    padding: 0 20px 0;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+}
+.carousel-image{
+    height: var(--item-image-hieght);
+    border-radius: var(--carousel-radius);
+    overflow: hidden;
+}
+.carousel-image img{
+    height: 100%;
+}
