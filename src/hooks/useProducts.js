@@ -16,6 +16,8 @@ function useProductsActions(){
     const getProducts =() =>{
         getProductsApi().then(res=>{
             setProducts(res.data)
+        }).catch(err=>{
+            console.log('has error',err);
         });
     }
     return {getProducts};

@@ -2,30 +2,29 @@ import React, { useEffect,useState } from "react";
 import {useParams} from 'react-router-dom';
 import SingleProduct from "../components/products/SingleProduct";
 import NavBar from "../components/layouts/NavBar";
-import {getProductApi} from '../apis/products'
+import {getCategoryProductApi} from '../apis/products'
 function CategoryProducts(){
 
     let params=useParams();
-    const [product,setProduct]=useState({});
+    const [products,setProducts]=useState([]);
 
     useEffect(()=>{
-    
-
-        const getProduct = () =>{
-        const id = params.id;
-        getProductApi(id).then(res=>{
-            setProduct(res.data)
-        });
+            const getProduct = async () =>{
+            const category_slug = params.slug;
+            const {res}=await getCategoryProductApi(category_slug);
+            // .then( (res)=>{
+            setProducts(res.data)
+            // });
         }
         getProduct();
-    },[params.id]);
+    },[params.slug]);
 
     return(
 
         <div >
            <NavBar />
            <div className='container'>
-              <SingleProduct product={product} />
+              
            </div>
         </div>
       

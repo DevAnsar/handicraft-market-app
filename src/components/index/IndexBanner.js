@@ -5,14 +5,6 @@ function IndexBanner({sliders}){
     return(
 
       <section className="">
-        {/* <div className="col s12 m12 l12">
-          <div className="card box" style={{height:'100vh'}}>
-            <div className="card-content " style={{height:'200px',overflow:'hidden'}}>
-           
-           </div>
-          </div>
-        </div> */}
-
           <Slider
             fullscreen={false}
             options={{
@@ -25,7 +17,7 @@ function IndexBanner({sliders}){
             {
               sliders.map(slide=>(
 
-                <Slide key={slide.id} image={<img alt={slide.Tagline} src={Slide.src} />}>
+                <Slide key={slide.id} image={<img alt={slide.Tagline} src={slide.src} />}>
                   <Caption placement={slide.placement}>
                     <h3 className='text-color'>
                       {slide.Tagline}

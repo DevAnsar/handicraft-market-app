@@ -1,10 +1,25 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import ThemeSwitcher from "./ThemeSwitcher";
 import './../../styles/navbar.css';
 import {Navbar,NavItem,Icon,Divider,SideNavItem,Dropdown} from 'react-materialize';
-
+// import {getCategoriesApi} from './../../apis/index';
+// import {toast} from 'react-hot-toast';
+import {useData} from './../../providers/IndexProvider'
 function NabBar(){
+
+  const {categories}=useData();
+
+  // useEffect(()=>{
+
+  //   getCategoriesApi().then(res=>{
+  //     let {status,data,message}=res;
+  //     if(!status){toast.error(message)};
+
+  //     console.log('categories',data)
+  //     setCategories(data.data)
+  //   }).catch(err=>{console.log(err)})
+  // },[]);
 
   return(
     <Navbar
@@ -80,7 +95,11 @@ function NabBar(){
             حالت تاریک
       </NavItem>
       <NavItem >
-        Components
+        <Link to='/about' className='text-color row-center'>
+        درباره ما و ارتباط
+
+        </Link>
+        
       </NavItem>
       <NavItem  >
       <Dropdown
@@ -129,7 +148,7 @@ function NabBar(){
       
         </Dropdown>
       </NavItem>
-      <NavItem>
+      <NavItem style={{marginRight:'40px'}}>
         <Dropdown
           id="Dropdown_14"
           options={{
@@ -151,25 +170,18 @@ function NabBar(){
           trigger={<div>دسته بندی{' '}<Icon right>arrow_drop_down</Icon></div>}
           children={
             <ul className="dropdown-box">
-              <li className="dropdown-item">
-                <Link to="/">
-                لوازم آشپزخانه
-                  </Link>
-              </li>
-
-              <li  className="dropdown-item">
-                <Link to="/">
-                  آلات موسیقی
-                </Link>
-              </li>
-  
-                <Divider />
-    
-              <li  className="dropdown-item">
-                <Link to="/">
-                  لوازم بازی
-                </Link>
-              </li>
+              {
+                categories?.map(category=>(
+                  <li key={category.id} className="dropdown-item">
+                  <Link to={`/products?category=${category.slug}`}>
+                  
+                      {
+                        category.title
+                      }
+                    </Link>
+                </li>
+                ))
+              }
           </ul>
           }
         >
