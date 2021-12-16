@@ -7,10 +7,11 @@ import IndexDescription from '../components/index/IndexDescription';
 function ProductsPage({}){
     const {getProducts}=useProductsActions();
     const products=useProducts();
+    console.log('products',products);
     useEffect(()=>{
 
         getProducts();
-        console.log('ProductsPage relode')
+        // console.log('ProductsPage relode')
 
     },[]);
 

@@ -1,7 +1,7 @@
 import React from "react"
 import { ProductsContext,ProductsSetContext  } from "../providers/ProductsProvider"
 import {getProductsApi} from '../apis/products'
-
+import {toast} from 'react-hot-toast'
 function useProducts() {
     return React.useContext(ProductsContext);
 }
@@ -15,9 +15,14 @@ function useProductsActions(){
 
     const getProducts =() =>{
         getProductsApi().then(res=>{
-            setProducts(res.data)
+            let {status,data,message}=res.data;
+            if(status){
+                setProducts(data)
+            }else{
+                toast.error(message)
+            }
         }).catch(err=>{
-            console.log('has error',err);
+            toast.error(err.message)
         });
     }
     return {getProducts};

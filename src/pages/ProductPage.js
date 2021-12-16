@@ -5,23 +5,27 @@ import {getProductApi} from '../apis/products'
 import TouchSlider from "../components/layouts/TouchSlider";
 import IndexDescription from "../components/index/IndexDescription";
 import {toast } from 'react-hot-toast';
+import './../styles/products.css';
 function ProductPage(){
 
     let params=useParams();
     const [data,setData]=useState({"product":{},"similar_products":[]});
-
-
     useEffect(()=>{
     
 
         const getProduct = () =>{
-        const id = params.slug;
-        getProductApi(id).then(res=>{
-            
-            setData({
-                "product":res.data,
-                "similar_products":[res.data]
-            });
+        const slug = params.slug;
+        getProductApi(slug).then(res=>{
+            let {status,data,message}=res;
+            if(status){
+                setData({
+                    "product":data.data.product,
+                    "similar_products":[data.data.product]
+                });
+            }else{
+                toast.error(message)
+            }
+
         }).catch(err=>{
             toast.error('محصول دریافت نشد')
             console.log('getProductApi error:',err)
@@ -35,8 +39,6 @@ function ProductPage(){
               <SingleProduct product={data.product} />
               {data &&(<TouchSlider title={`محصولات مشابه`} items={data.similar_products}  />) }
               <IndexDescription />
-
-
            </div> 
     )
 }

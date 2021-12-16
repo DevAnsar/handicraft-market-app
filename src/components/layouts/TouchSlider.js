@@ -69,7 +69,7 @@ function TouchSlider({ title, items }) {
           { !items && <SliderItemShimmer />}
 
           {items?.map((obj) => (
-            <SliderItem item={obj} />
+            <SliderItem key={obj.id} item={obj} />
           ))}
         </Carousel>
       </div>
@@ -85,7 +85,7 @@ function SliderItem({ item }) {
         className="carousel-card top-box z-depth-2 slider-item"
       >
         <Link
-          to={`/product/${item.id}`}
+          to={`/product/${item.slug}`}
           className="card-content text-color carousel-card-content"
         >
           <div className="carousel-image z-depth-2">
