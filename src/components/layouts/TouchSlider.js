@@ -5,6 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import UAParser from "ua-parser-js";
 import { Link } from "react-router-dom";
 import { Image } from "semantic-ui-react";
+import {ENV} from './../../constants'
 
 function TouchSlider({ title, items }) {
   let userAgent='mobile';
@@ -89,7 +90,7 @@ function SliderItem({ item }) {
           className="card-content text-color carousel-card-content"
         >
           <div className="carousel-image z-depth-2">
-            <Image draggable={false} src={item.src} />
+            <Image draggable={false} src={`${ENV.ApiUrl}${item.image.url}`} />
           </div>
           <div className="carousel-text-content text-color">
             <div className="title top-box-text-color">{item.title}</div>

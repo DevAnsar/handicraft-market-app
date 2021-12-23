@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { Button, Icon } from "react-materialize";
 import { toast } from "react-hot-toast";
+import {ENV} from './../../constants'
 
 function SingleProduct({ product }) {
-  let navigate = useNavigate();
   const addToBasket = () => {
     toast.success("بخش ثبت سفارش در حال توسعه میباشد");
   };
@@ -14,7 +13,13 @@ function SingleProduct({ product }) {
     <section className="card box text-color product-box mt-3">
       <div className="row ">
         <div className="col-12 col-md-6 col-lg-5 product-gallery-box">
-          <div className="product-image top-box"></div>
+          <div className="product-image top-box">
+            {
+              product && (
+                <img className="w-100" src={ENV.ApiUrl+product?.image?.url} alt={product.title} />
+              )
+            }
+          </div>
         </div>
 
         <div className="col-12 col-md-6 col-lg-7 product-details-box">

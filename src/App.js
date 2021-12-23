@@ -20,10 +20,12 @@ import ProductPage from './pages/ProductPage';
 //Providers
 import ThemeProvider ,{ThemeContext} from './providers/ThemeProvider';
 import ProductsProvider  from './providers/ProductsProvider';
+import ScrollToTop from './components/layouts/ScroolToTop';
 
 //Library
 import {Toaster} from 'react-hot-toast';
 import IndexProvider from './providers/IndexProvider';
+
 
 const StyleTag = () => {
   const themeMode = useContext(ThemeContext);
@@ -44,6 +46,7 @@ function App() {
         <ProductsProvider>
           <StyleTag />
           <div className="App" id="App">
+            <ScrollToTop />
             <NavBar />
 
               <Routes>
