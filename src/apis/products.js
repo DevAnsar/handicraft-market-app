@@ -1,7 +1,7 @@
 import axios from "./custom";
 
 
-const getProductsApi =async()=>await axios.get(`/products`); 
+const getProductsApi =(query)=>axios.get(`/products${query}`); 
 const getProductApi= slug=> axios.get(`/products/${slug}`);
 
 export {getProductsApi,getProductApi}

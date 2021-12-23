@@ -42,3 +42,26 @@
     line-height: 250%;
     text-align: center;
 }
+.product-search-category .input-field{
+
+	margin: 0 !important;
+	display: flex;
+	flex-direction: row-reverse;
+}
+.select-wrapper{
+	display: flex;
+	flex-direction: row-reverse;
+}
+.dropdown-content.select-dropdown{
+	right: 0 !important;
+	padding: 0!important;
+}
+
+.dropdown-content.select-dropdown li span{
+
+    display: inline-block !important;
+    float: right !important;
+}
+.select-wrapper .caret{
+	right: inherit !important;
+}

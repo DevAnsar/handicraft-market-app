@@ -1,26 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'materialize-css/dist/css/materialize.min.css';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "materialize-css/dist/css/materialize.min.css";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/css/bootstrap-grid.rtl.min.css';
-import 'bootstrap/dist/css/bootstrap-utilities.rtl.css';
-import 'bootstrap/dist/css/bootstrap-reboot.rtl.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap-grid.rtl.min.css";
+import "bootstrap/dist/css/bootstrap-utilities.rtl.css";
+import "bootstrap/dist/css/bootstrap-reboot.rtl.min.css";
 
-import 'vazir-font/dist/font-face.css';
-import 'materialize-css/dist/js/materialize.min.js';
+import "vazir-font/dist/font-face.css";
+import "materialize-css/dist/js/materialize.min.js";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
